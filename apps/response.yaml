@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: response-front
-  name: user-front # deployment의 이름
+  name: response-front # deployment의 이름
 spec:
   replicas: 2 # 개체수
   selector:
