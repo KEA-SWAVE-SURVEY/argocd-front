@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: analysis-front
-          image: kjk7212/analysis-front:1
+          image: kjk7212/analysis-front:15
           ports:
             - name: analysis-front
               containerPort: 3000

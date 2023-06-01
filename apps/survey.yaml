@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: survey-front
-          image: kjk7212/survey-front:1
+          image: kjk7212/survey-front:15
           ports:
             - name: survey-front
               containerPort: 3000
