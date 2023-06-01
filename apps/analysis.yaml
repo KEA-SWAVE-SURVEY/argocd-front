@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: analysis-front
+  name: analysis-front # deployment의 이름
+spec:
+  replicas: 2 # 개체수
+  selector:
+    matchLabels:
+      app: analysis-front
+  template:
+    metadata:
+      labels:
+        app: analysis-front # pod의 label을 지정
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '9113'
+    spec:
+      containers:
+        - name: analysis-front
+          image: kjk7212/analysis-front
+          ports:
+            - name: analysis-front
+              containerPort: 3000
+        - name: front-exporter
+          image: 'nginx/nginx-prometheus-exporter:0.10.0'
+          args:
+            - '-nginx.scrape-uri=http://localhost:3000/metrics'
+          resources:
+            limits:
+              memory: 128Mi
+              cpu: 500m
+          ports:
+            - name: ngnix-exporter
+              containerPort: 9113
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: analysis-front-service
+  labels:
+    app: analysis-front-service # service의 레이블
+spec:
+  type: ClusterIP
+  ports:
+  - name: front
+    protocol: TCP
+    port: 3000 # service의 port
+    targetPort: 3000 # pod의 target port
+  - name: ngnix-exporter
+    protocol: TCP 
+    port: 9113 # service의 port
+    targetPort: 9113 # pod의 target port
+  selector:
+    app: analysis-front # 연결 시킬 pod의 label
