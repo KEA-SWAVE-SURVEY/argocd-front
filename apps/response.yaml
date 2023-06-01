@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: response-front
-          image: kjk7212/response-front
+          image: kjk7212/response-front:1
           ports:
             - name: response-front
               containerPort: 3000
