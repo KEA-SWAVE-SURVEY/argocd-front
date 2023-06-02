@@ -17,6 +17,8 @@ spec:
         prometheus.io/scrape: 'true'
         prometheus.io/port: '9113'
     spec:
+      imagePullSecrets:
+        - name: kjk7212
       containers:
         - name: response-front
           image: kjk7212/response-front:15
