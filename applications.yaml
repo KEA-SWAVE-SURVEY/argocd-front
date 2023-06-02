@@ -16,7 +16,7 @@ spec:
   destination:
     namespace: front
     server:  https://kubernetes.front.svc
-  project: front
+  project: default
   source:
     path: apps
     repoURL: https://github.com/KEA-SWAVE-SURVEY/argocd-front.git
