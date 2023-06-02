@@ -32,7 +32,7 @@ spec:
           resources:
             limits:
               memory: 128Mi
-              cpu: 500m
+              cpu: 100m
           ports:
             - name: ngnix-exporter
               containerPort: 9113
