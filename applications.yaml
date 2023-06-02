@@ -9,15 +9,15 @@ metadata:
     notifications.argoproj.io/subscribe.on-health-degraded.slack: argocd
     notifications.argoproj.io/subscribe.on-deployed.slack: argocd
   name: SWAVE-front
-  namespace: default
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: front
     server: {{ .Values.spec.destination.server }}
-  project: default
+  project: front
   source:
     path: apps
-    repoURL: https://github.com/KEA-SWAVE-SURVEY/argocd-front
+    repoURL: https://github.com/KEA-SWAVE-SURVEY/argocd-front.git
     targetRevision: HEAD
