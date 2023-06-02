@@ -15,7 +15,7 @@ metadata:
 spec:
   destination:
     namespace: front
-    server: {{ .Values.spec.destination.server }}
+    server:  https://kubernetes.front.svc
   project: front
   source:
     path: apps
