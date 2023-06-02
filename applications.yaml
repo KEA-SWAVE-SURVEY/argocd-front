@@ -16,7 +16,7 @@ spec:
   destination:
     namespace: default
     server: {{ .Values.spec.destination.server }}
-  project: front
+  project: default
   source:
     path: apps
     repoURL: https://github.com/KEA-SWAVE-SURVEY/argocd-front
