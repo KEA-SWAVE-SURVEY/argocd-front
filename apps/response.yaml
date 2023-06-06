@@ -25,14 +25,15 @@ spec:
           ports:
             - name: response-front
               containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
         - name: front-exporter
           image: 'nginx/nginx-prometheus-exporter:0.10.0'
           args:
             - '-nginx.scrape-uri=http://localhost:3000/metrics'
-          resources:
-            limits:
-              memory: 128Mi
-              cpu: 100m
           ports:
             - name: ngnix-exporter
               containerPort: 9113
