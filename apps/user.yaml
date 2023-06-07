@@ -21,7 +21,7 @@ spec:
         - name: kjk7212
       containers:
         - name: user-front
-          image: kjk7212/user-front:14
+          image: kjk7212/user-front:46
           ports:
             - name: user-front
               containerPort: 3000
