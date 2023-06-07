@@ -21,7 +21,7 @@ spec:
         - name: docker-pull-secret
       containers:
         - name: response-front
-          image: kjk7212/response-front:54
+          image: kjk7212/response-front:55
           ports:
             - name: response-front
               containerPort: 3000
