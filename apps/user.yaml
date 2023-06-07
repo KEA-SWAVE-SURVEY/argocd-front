@@ -5,7 +5,7 @@ metadata:
     app: user-front
   name: user-front # deployment의 이름
 spec:
-  replicas: 2 # 개체수
+  #replicas: 2 #hpa
   selector:
     matchLabels:
       app: user-front
