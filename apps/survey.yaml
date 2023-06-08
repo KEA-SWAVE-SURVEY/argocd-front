@@ -21,7 +21,7 @@ spec:
         - name: docker-pull-secret
       containers:
         - name: survey-front
-          image: kjk7212/survey-front:70
+          image: kjk7212/survey-front:75
           ports:
             - name: survey-front
               containerPort: 3000
