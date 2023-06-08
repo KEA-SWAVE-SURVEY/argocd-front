@@ -21,7 +21,7 @@ spec:
         - name: docker-pull-secret
       containers:
         - name: user-front
-          image: kjk7212/user-front:76
+          image: kjk7212/user-front:77
           ports:
             - name: user-front
               containerPort: 3000
