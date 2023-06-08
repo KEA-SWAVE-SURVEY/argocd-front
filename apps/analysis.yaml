@@ -21,7 +21,7 @@ spec:
         - name: docker-pull-secret
       containers:
         - name: analysis-front
-          image: kjk7212/analysis-front:80
+          image: kjk7212/analysis-front:81
           ports:
             - name: analysis-front
               containerPort: 3000
